@@ -5,22 +5,22 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import com.khadri.mart.fruits.dao.FruitsDao;
+import com.khadri.mart.util.DaoUtil;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class FruitsModifyServlet extends HttpServlet {
 	 private static final long serialVersionUID = 1L;
+	 private FruitsDao dao;
+		private  DaoUtil utilDao;
 
-	    private FruitsDao dao;
-
-	    @Override
-	    public void init() {
-	        ServletContext context = getServletContext();
-	        dao = new FruitsDao(context); 
-	    }
+		@Override
+		public void init() {
+			utilDao = new DaoUtil();
+			dao = new FruitsDao(utilDao);
+		}
 
 	    @Override
 	    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

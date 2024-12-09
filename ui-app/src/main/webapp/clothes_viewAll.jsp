@@ -2,10 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.khadri.mart.clothes.form.ClothesForm"%>
 <%@ page import="com.khadri.mart.clothes.dao.ClothesDao"%>
+<%@ page import="com.khadri.mart.util.DaoUtil"%>
+
 <%@ page import="java.util.*"%>
 <%
-	ServletContext context = application;
-	ClothesDao dao = new ClothesDao(context);
+	DaoUtil daoUtil  = new DaoUtil();
+	ClothesDao dao = new ClothesDao(daoUtil);
 	List<ClothesForm> listOfClothes = dao.selectAllClothes();
 %>
 <!DOCTYPE html>

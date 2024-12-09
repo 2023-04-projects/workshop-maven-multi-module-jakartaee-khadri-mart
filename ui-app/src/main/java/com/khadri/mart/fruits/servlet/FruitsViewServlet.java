@@ -6,8 +6,8 @@ import java.util.List;
 
 import com.khadri.mart.fruits.dao.FruitsDao;
 import com.khadri.mart.fruits.form.FruitsForm;
+import com.khadri.mart.util.DaoUtil;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,10 +16,12 @@ public class FruitsViewServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private FruitsDao dao;
+	private DaoUtil utilDao;
 
+	@Override
 	public void init() {
-		ServletContext context = getServletContext();
-		dao = new FruitsDao(context);
+		utilDao = new DaoUtil();
+		dao = new FruitsDao(utilDao);
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

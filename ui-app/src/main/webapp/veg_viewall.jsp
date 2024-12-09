@@ -1,3 +1,4 @@
+<%@page import="com.khadri.mart.util.DaoUtil"%>
 <%@page import="com.khadri.mart.vegetable.form.VegetableForm"%>
 <%@page import="com.khadri.mart.vegetable.dao.VegetableDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -5,9 +6,8 @@
 <%@ page import="java.util.List"%>
 
 <%
-		ServletContext context = application;
-
-		VegetableDao vegetableDao = new VegetableDao(context);
+		DaoUtil daoUtil = new DaoUtil();
+		VegetableDao vegetableDao = new VegetableDao(daoUtil);
 		List<VegetableForm> vegetableList = vegetableDao.selectAllVegetables();
 		%>
 	<!DOCTYPE html>

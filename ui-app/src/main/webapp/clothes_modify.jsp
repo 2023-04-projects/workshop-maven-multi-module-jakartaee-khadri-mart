@@ -1,6 +1,8 @@
+<%@page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.khadri.mart.clothes.dao.ClothesDao"%>
+<%@ page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page import="com.khadri.mart.clothes.form.ClothesForm"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
@@ -27,8 +29,8 @@
 		String searchName = request.getParameter("item_name");
 		List<ClothesForm> listOfClothes = new ArrayList<>();
 		if (searchName != null && !searchName.isEmpty()) {
-			ServletContext context = application;
-			ClothesDao dao = new ClothesDao(context);
+			DaoUtil daoUtil = new DaoUtil();
+			ClothesDao dao = new ClothesDao(daoUtil);
 			listOfClothes = dao.selectClothes(searchName);
 		}
 	%>

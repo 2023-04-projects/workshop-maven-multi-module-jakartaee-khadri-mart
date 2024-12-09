@@ -4,16 +4,17 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.khadri.mart.fruits.form.FruitsForm"%>
 <%@ page import="com.khadri.mart.fruits.dao.FruitsDao"%>
+<%@ page import="com.khadri.mart.util.DaoUtil"%>
 <%
-	ServletContext context = application;
-	FruitsDao dao = new FruitsDao(context);
-	List<FruitsForm> listOfFruits = new ArrayList<>();
+    DaoUtil daoUtil = new DaoUtil();
+    FruitsDao dao = new FruitsDao(daoUtil);
+    List<FruitsForm> listOfFruits = new ArrayList<>();
 
-	String searchName = request.getParameter("item_name");
+    String searchName = request.getParameter("item_name");
 
-	if (searchName != null && !searchName.trim().isEmpty()) {
-		listOfFruits = dao.selectFruits(searchName.trim());
-	}
+    if (searchName != null && !searchName.trim().isEmpty()) {
+	listOfFruits = dao.selectFruits(searchName.trim());
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -39,7 +40,7 @@
 		</thead>
 		<tbody>
 			<%
-				for (FruitsForm eachForm : listOfFruits) {
+			for (FruitsForm eachForm : listOfFruits) {
 			%>
 			<tr>
 				<td><%=eachForm.getItemName()%></td>
@@ -47,7 +48,7 @@
 				<td><%=eachForm.getItemPrice()%></td>
 			</tr>
 			<%
-				}
+			}
 			%>
 		</tbody>
 	</table>

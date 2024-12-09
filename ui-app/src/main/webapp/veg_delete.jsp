@@ -1,3 +1,4 @@
+<%@page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.khadri.mart.vegetable.form.VegetableForm"%>
@@ -8,8 +9,8 @@
 		String searchName = request.getParameter("veg_name");
 		List<VegetableForm> listOfVegetables = new ArrayList<>();
 		if (searchName != null && !searchName.isEmpty()) {
-			ServletContext context = application;
-			VegetableDao dao = new VegetableDao(context);
+			DaoUtil daoUtil = new DaoUtil();
+			VegetableDao dao = new VegetableDao(daoUtil);
 			listOfVegetables = dao.selectVegetables(searchName);
 		}
 	%>

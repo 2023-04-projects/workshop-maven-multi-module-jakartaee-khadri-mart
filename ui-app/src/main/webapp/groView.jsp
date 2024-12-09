@@ -1,11 +1,12 @@
+<%@page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.khadri.mart.grosary.dao.GrosaryDao"%>
 <%@ page import="com.khadri.mart.grosary.form.GrosaryForm"%>
 <%
-	ServletContext context = application;
-	GrosaryDao dao = new GrosaryDao(context);
+	DaoUtil daoUtil = new DaoUtil();
+	GrosaryDao dao = new GrosaryDao(daoUtil);
 	List<GrosaryForm> listOfGrossaries = new ArrayList<>();
 
 	String searchName = request.getParameter("name");

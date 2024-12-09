@@ -3,7 +3,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.khadri.mart.grosary.dao.GrosaryDao"%>
 <%@ page import="com.khadri.mart.grosary.form.GrosaryForm "%>
-<%@ page import jakarta.servlet.ServletContext "%>
+<%@ page import = "com.khadri.mart.util.DaoUtil "%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,8 +23,8 @@
 	List<GrosaryForm> listOfGrossaries = new ArrayList<>();
 
 	if (searchName != null) {
-		ServletContext context = application;
-		GrosaryDao dao = new GrosaryDao(context);
+		DaoUtil daoUtil = new DaoUtil();
+		GrosaryDao dao = new GrosaryDao(daoUtil);
 		listOfGrossaries = dao.selectGrosary(searchName);
 	}
 	%>

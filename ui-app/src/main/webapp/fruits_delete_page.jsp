@@ -1,5 +1,6 @@
-<%@ %> page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ 
+page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,36 +8,34 @@
 <title>Delete Product</title>
 </head>
 <body>
-    <%
-        String name = request.getParameter("item_name");
-        String qty = request.getParameter("item_qty");
-        String price = request.getParameter("item_price");
-    %>
-    <form action="fruitsdelete" method="post"> 
-        <table border="1">
-            <tbody>
-                <tr>
-                    <td>
-                        Name: <input type="text" name="item_name" value="<%= name %>" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Quantity: <input type="text" name="item_qty" id="qty" value="<%= qty %>">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Price: <input type="text" name="item_price" id="price" value="<%= price %>">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Delete">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+	<%
+	String name = request.getParameter("item_name");
+	String qty = request.getParameter("item_qty");
+	String price = request.getParameter("item_price");
+	%>
+	<form action="fruitsdelete" method="post">
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>Name: <input type="text" name="item_name"
+						value="<%=name%>" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>Quantity: <input type="text" name="item_qty" id="qty"
+						value="<%=qty%>">
+					</td>
+				</tr>
+				<tr>
+					<td>Price: <input type="text" name="item_price" id="price"
+						value="<%=price%>">
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Delete"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>

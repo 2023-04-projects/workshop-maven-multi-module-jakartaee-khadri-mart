@@ -3,10 +3,10 @@ package com.khadri.mart.vegetable.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.khadri.mart.util.DaoUtil;
 import com.khadri.mart.vegetable.dao.VegetableDao;
 import com.khadri.mart.vegetable.form.VegetableForm;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,12 +15,11 @@ public class ModifyVegetableServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private VegetableDao dao;
-	PrintWriter pw;
-
+	private DaoUtil daoUtil; 
 	@Override
 	public void init() {
-		ServletContext context = getServletContext();
-		dao = new VegetableDao(context);
+		daoUtil = new DaoUtil();
+		dao = new VegetableDao(daoUtil);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

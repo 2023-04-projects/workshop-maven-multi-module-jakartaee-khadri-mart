@@ -3,8 +3,8 @@ package com.khadri.mart.clothes.servlet;
 import java.io.IOException;
 
 import com.khadri.mart.clothes.dao.ClothesDao;
+import com.khadri.mart.util.DaoUtil;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,10 +13,11 @@ public class DeleteClothesServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private ClothesDao dao;
-	@Override
+	private DaoUtil daoUtil;
+
 	public void init() {
-		ServletContext context = getServletContext();
-		dao = new ClothesDao(context);
+		daoUtil= new DaoUtil(); 
+		dao = new ClothesDao(daoUtil);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

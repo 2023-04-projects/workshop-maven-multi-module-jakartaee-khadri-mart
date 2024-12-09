@@ -5,8 +5,8 @@ import java.io.PrintWriter;
 
 import com.khadri.mart.grosary.dao.GrosaryDao;
 import com.khadri.mart.grosary.form.GrosaryForm;
+import com.khadri.mart.util.DaoUtil;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,12 +15,12 @@ public class ModifyGrosaryServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private GrosaryDao dao;
-	PrintWriter pw;
+	private PrintWriter pw;
+	private DaoUtil daoUtil;
 
-	@Override
 	public void init() {
-		ServletContext context = getServletContext();
-		dao = new GrosaryDao(context);
+		daoUtil= new DaoUtil(); 
+		dao = new GrosaryDao(daoUtil);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

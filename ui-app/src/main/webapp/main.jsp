@@ -52,8 +52,6 @@
 					class="bottom-left-frame"></iframe>
 				<iframe name="bottom_left_fru" src="bottom_left_fruits.jsp"
 					class="bottom-left-frame"></iframe>
-				<iframe name="bottom_left_cos" src="bottom_left_cos.jsp"
-					class="bottom-left-frame"></iframe>
 				<iframe name="bottom_left_cos" src="bottom_left_veg.jsp"
 					class="bottom-left-frame"></iframe>
 			</div>

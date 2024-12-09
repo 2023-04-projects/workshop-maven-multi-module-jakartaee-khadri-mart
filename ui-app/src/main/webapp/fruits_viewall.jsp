@@ -1,12 +1,14 @@
+<%@page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.khadri.mart.fruits.form.FruitsForm"%>
 <%@ page import="com.khadri.mart.fruits.dao.FruitsDao"%>
+<%@ page import="com.khadri.mart.util.DaoUtil"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	ServletContext context = application;
-	FruitsDao dao = new FruitsDao(context);
+	DaoUtil daoUtil =  new DaoUtil();
+	FruitsDao dao = new FruitsDao(daoUtil);
 	List<FruitsForm> listOfFruits = dao.selectAllFruits();
 %>
 <!DOCTYPE html>

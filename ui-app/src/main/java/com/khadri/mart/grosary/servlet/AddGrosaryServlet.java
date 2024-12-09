@@ -6,8 +6,8 @@ import java.io.PrintWriter;
 
 import com.khadri.mart.grosary.dao.GrosaryDao;
 import com.khadri.mart.grosary.form.GrosaryForm;
+import com.khadri.mart.util.DaoUtil;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,11 +16,11 @@ public class AddGrosaryServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private GrosaryDao dao;
+	private DaoUtil daoUtil;
 
-	@Override
 	public void init() {
-		ServletContext context = getServletContext();
-		dao = new GrosaryDao(context);
+		daoUtil= new DaoUtil(); 
+		dao = new GrosaryDao(daoUtil);
 	}
 
 	@Override

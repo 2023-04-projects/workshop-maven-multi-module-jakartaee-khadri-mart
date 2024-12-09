@@ -8,33 +8,13 @@
 <title>Clothes Details</title>
 </head>
 <body>
-	<table>
-		<thead>
-			<tr>
-				<th colspan="2">
-					<h2>Clothes Details</h2>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><a href="clothes_add.jsp" target="bottom_right">Add</a></td>
-			</tr>
-			<tr>
-				<td><a href="clothes_modify.jsp" target="bottom_right">Modify</a></td>
-			</tr>
-			<tr>
-				<td><a href="clothes_view.jsp" target="bottom_right">View</a></td>
-			</tr>
-			<tr>
-				<td><a href="clothes_viewAll.jsp" target="bottom_right">View
-						All </a></td>
-			</tr>
-			<tr>
-				<td><a href="clothes_delete.jsp" target="bottom_right">Delete
-				</a></td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="vertical-menu">
+		<a href="#" class="active">Clothes_Details</a> <a
+			href="clothes_add.jsp" target="bottom_right">Add</a> <a
+			href="clothes_modify.jsp" target="bottom_right">Modify</a> <a
+			href="clothes_view.jsp" target="bottom_right">View</a> <a
+			href="clothes_viewAll.jsp" target="bottom_right">ViewAll</a> <a
+			href="clothes_delete.jsp" target="bottom_right">Delete</a>
+	</div>
 </body>
 </html>
